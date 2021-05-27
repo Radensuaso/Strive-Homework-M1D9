@@ -16,11 +16,7 @@ const createNumbers = function () {
 // get random number function
 getRandomNumber = function () {
   const numbersArray = document.querySelectorAll(".numbers")
-  for (const number of numbersArray) {
-    if (number.classList.contains("highlight"))
-      number.classList.remove("highlight")
-  }
-
   const randomNumber = Math.floor(Math.random() * 76)
+  console.log(randomNumber + 1)
   numbersArray[randomNumber].classList.add("highlight")
 }
