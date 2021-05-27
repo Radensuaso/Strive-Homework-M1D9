@@ -12,3 +12,10 @@ const createNumbers = function () {
     numberContainer.appendChild(newNumber)
   }
 }
+
+// get random number function
+getRandomNumber = function () {
+  const randomNumber = Math.ceil(Math.random() * 76)
+  const selectedDiv = document.querySelectorAll(".numbers")[randomNumber]
+  selectedDiv.classList.add("highlight")
+}
