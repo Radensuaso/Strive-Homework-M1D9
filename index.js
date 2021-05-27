@@ -6,16 +6,16 @@ window.onload = function () {
 const createNumbers = function () {
   const numberContainer = document.querySelector("#number-container")
   for (let i = 1; i <= 76; i++) {
-    const newNumber = document.createElement("div")
-    newNumber.innerText = i
-    newNumber.classList.add("numbers")
-    numberContainer.appendChild(newNumber)
+    const newBoardCell = document.createElement("div")
+    newBoardCell.innerText = i
+    newBoardCell.classList.add("boardCells")
+    numberContainer.appendChild(newBoardCell)
   }
 }
 
 // get random number function
 getRandomNumber = function () {
-  const numbersArray = document.querySelectorAll(".numbers")
+  const numbersArray = document.querySelectorAll(".boardCells")
   const randomNumber = Math.floor(Math.random() * 76)
   console.log(randomNumber + 1)
   numbersArray[randomNumber].classList.add("highlight")
