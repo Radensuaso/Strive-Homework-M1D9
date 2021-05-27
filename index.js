@@ -15,7 +15,12 @@ const createNumbers = function () {
 
 // get random number function
 getRandomNumber = function () {
-  const randomNumber = Math.ceil(Math.random() * 76)
-  const selectedDiv = document.querySelectorAll(".numbers")[randomNumber]
-  selectedDiv.classList.add("highlight")
+  const numbersArray = document.querySelectorAll(".numbers")
+  for (const number of numbersArray) {
+    if (number.classList.contains("highlight"))
+      number.classList.remove("highlight")
+  }
+
+  const randomNumber = Math.floor(Math.random() * 76)
+  numbersArray[randomNumber].classList.add("highlight")
 }
