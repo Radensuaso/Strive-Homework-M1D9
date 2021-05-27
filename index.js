@@ -13,10 +13,24 @@ const createNumbers = function () {
   }
 }
 
+// array of unique numbers
+const arrayOfUniqueNumbers = [] //With this we will be able to randomize the numbers just once
+for (let i = 0; i < 76; i++) {
+  arrayOfUniqueNumbers.push(i)
+}
+
 // get random number function
+
 getRandomNumber = function () {
-  const numbersArray = document.querySelectorAll(".boardCells")
-  const randomNumber = Math.floor(Math.random() * 76)
-  console.log(randomNumber + 1)
-  numbersArray[randomNumber].classList.add("highlight")
+  const cellsArray = document.querySelectorAll(".boardCells") // select array of boardCells divs
+  const randomIndex = Math.floor(Math.random() * arrayOfUniqueNumbers.length) //Select random Index to randomize a number in the unique numbers array
+  const randomNumber = arrayOfUniqueNumbers[randomIndex] // random number of the array of arrayOfUniqueNumbers, randomly selected by randomIndex
+
+  if (arrayOfUniqueNumbers.length === 0) {
+    alert("No more numbers. Please refresh the page to start again") // If there's no more numbers alert the user to refresh the page
+  } else {
+    arrayOfUniqueNumbers.splice(randomIndex, 1)
+    cellsArray[randomNumber].classList.add("highlight")
+    document.querySelector("#current-number").innerText = randomNumber + 1
+  }
 }
