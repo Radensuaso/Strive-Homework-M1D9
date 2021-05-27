@@ -1,0 +1,19 @@
+body {
+  background-color: antiquewhite;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3.5em;
+  text-align: center;
+}
+
+#number-container .numbers {
+  display: inline-block;
+  font-size: 2.5em;
+  padding: 5px 10px 5px 10px;
+  border: solid;
+  width: 40px;
+}
